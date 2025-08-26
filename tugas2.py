@@ -2,9 +2,8 @@
 def buatMatriks3kali3():
     matriks = [[0,0,0],[0,0,0],[0,0,0]]
     for i in range(3):
-        nilai = [int(k) for k in input(f"Masukkan elemen matriks baris {i+1}:").split()]
         for j in range(0,3):
-            matriks[i][j] = nilai[j]
+            matriks[i][j] = int(input(f"Masukkan elemen matriks pada baris {i+1}, kolom {j+1}: "))
     return matriks
 
 def penjumlahan(matriks1, matriks2):
