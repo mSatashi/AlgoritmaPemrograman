@@ -1,5 +1,5 @@
 
-def buat_matriks_tiga_kali_tiga():
+def buatMatriks3kali3():
     matriks = [[0,0,0],[0,0,0],[0,0,0]]
     for i in range(3):
         nilai = [int(k) for k in input(f"Masukkan elemen matriks baris {i+1}:").split()]
@@ -81,9 +81,9 @@ if __name__ == "__main__":
     print("Selamat datang di kalkulator matriks 3x3")
     print("Masukkan elemen matriks1 dan matriks2 terlebih dahulu")
     print("###################################")
-    matriks1 = buat_matriks_tiga_kali_tiga()
+    matriks1 = buatMatriks3kali3()
     print("ini adalah matriks1 Anda: ",matriks1)
-    matriks2 = buat_matriks_tiga_kali_tiga()
+    matriks2 = buatMatriks3kali3()
     print("ini adalah matriks2 Anda",matriks2)
     print("###################################")
     menuOpsi()
