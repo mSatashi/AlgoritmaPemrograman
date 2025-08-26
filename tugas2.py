@@ -46,6 +46,36 @@ def pemeriksaanMatriksSatuan(matriks):
                 return True
     return False
 
+def menuOpsi():
+    print("Silakan pilih operasi yang diinginkan:")
+    print("1. Penjumlahan")
+    print("2. Pengurangan") 
+    print("3. Perkalian")
+    print("4. Pemeriksaan matriks satuan")
+    pilihan = int(input("Masukkan pilihan Anda (1/2/3/4): "))
+    while pilihan not in [1,2,3,4]:
+        print("Pilihan tidak valid. Silakan pilih 1, 2, 3, atau 4.")
+        pilihan = int(input("Masukkan pilihan Anda (1/2/3/4): "))
+    match pilihan:
+        case 1:
+            hasil_penjumlahan = penjumlahan(matriks1, matriks2)
+            print("Hasil penjumlahan matriks1 dan matriks2 adalah:", hasil_penjumlahan)
+        case 2:
+            hasil_pengurangan = pengurangan(matriks1, matriks2)
+            print("Hasil pengurangan matriks1 dan matriks2 adalah:", hasil_pengurangan)
+        case 3:
+            hasil_perkalian = perkalian(matriks1, matriks2)
+            print("Hasil perkalian matriks1 dan matriks2 adalah:", hasil_perkalian)
+        case 4:
+            if pemeriksaanMatriksSatuan(matriks1):
+                print("Matriks1 adalah matriks satuan.")
+            else:
+                print("Matriks1 bukan matriks satuan.")
+            if pemeriksaanMatriksSatuan(matriks2):
+                print("Matriks2 adalah matriks satuan.")
+            else:
+                print("Matriks2 bukan matriks satuan.")
+
 
 if __name__ == "__main__":
     print("Selamat datang di kalkulator matriks 3x3")
@@ -56,31 +86,4 @@ if __name__ == "__main__":
     matriks2 = buat_matriks_tiga_kali_tiga()
     print("ini adalah matriks2 Anda",matriks2)
     print("###################################")
-    print("Silakan pilih operasi yang diinginkan:")
-    print("1. Penjumlahan")
-    print("2. Pengurangan") 
-    print("3. Perkalian")
-    print("4. Pemeriksaan matriks satuan")
-    pilihan = int(input("Masukkan pilihan Anda (1/2/3/4): "))
-    while pilihan not in [1,2,3,4]:
-        print("Pilihan tidak valid. Silakan pilih 1, 2, 3, atau 4.")
-        pilihan = int(input("Masukkan pilihan Anda (1/2/3/4): "))
-    if pilihan == 1:
-        hasil_penjumlahan = penjumlahan(matriks1, matriks2)
-        print("Hasil penjumlahan matriks1 dan matriks2 adalah:", hasil_penjumlahan)
-    elif pilihan == 2:
-        hasil_pengurangan = pengurangan(matriks1, matriks2)
-        print("Hasil pengurangan matriks1 dan matriks2 adalah:", hasil_pengurangan)
-    elif pilihan == 3:
-        hasil_perkalian = perkalian(matriks1, matriks2)
-        print("Hasil perkalian matriks1 dan matriks2 adalah:", hasil_perkalian)
-    elif pilihan == 4:
-        if pemeriksaanMatriksSatuan(matriks1):
-            print("Matriks1 adalah matriks satuan.")
-        else:
-            print("Matriks1 bukan matriks satuan.")
-        if pemeriksaanMatriksSatuan(matriks2):
-            print("Matriks2 adalah matriks satuan.")
-        else:
-            print("Matriks2 bukan matriks satuan.")
-            
+    menuOpsi()
